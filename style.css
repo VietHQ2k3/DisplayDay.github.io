@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --mauxanh-color: rgb(76, 167, 252);
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, rgb(76, 167, 252),rgb(11, 74, 142));
+    font-family: "Poppins";
+}
+.card{
+    margin: 120px auto;
+    width: 320px;
+    height: 400px;
+    background: rgb(39, 45, 64);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.card__heart,.card__cart{
+    font-size: 25px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.card__cart{
+    left: unset;
+    right: 20px;
+}
+
+.card__img{
+    transition: 0.5s;
+    width: 90%;
+}
+
+.card__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__title,.card__price{
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.card__title{
+    color: var(--mauxanh-color);
+}
+
+.card__color,.card__size{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card__size span{
+    padding: 2px 10px;
+    background: #dadada;
+    color: black;
+    border-radius: 5px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.card__color span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.card__color--green{
+    background: green;
+}
+
+.card__color--red{
+    background: red;
+}
+
+.card__color--yellow{
+    background: yellow;
+}
+
+.card__action button{
+    padding: 10px 20px;
+    background: var(--mauxanh-color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: 0.25s;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.card:hover .card__img{
+    transform: translateY(-75px) rotate(-20deg);
+}
+
+.card:hover .card__title{
+    transform: translate(-72px, -70px);
+}
+
+.card:hover .card__price{
+    transform: translate(-110px, -70px);
+}
+
+.card__color, .card__action, .card__size{
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+}
+
+.card__size{
+    margin-top: 150px;
+}
+
+.card:hover .card__size,
+.card:hover .card__color,
+.card:hover .card__action{
+    opacity: 100;
+    visibility: visible;
+    margin-top: 0px;
+}
+
+.card__action button:hover{
+    transform: scale(0.9);
+}
+
+.card__size span:hover{
+    transform: scale(0.9);
+}
+
+.card__color span:hover{
+    transform: scale(0.9);
+    border: white;
+    outline: solid;
+}
